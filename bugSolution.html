@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error Solution</title>
+</head>
+<body>
+  <div id="myDiv" data-myattribute="Hello">
+    This is some text.
+  </div>
+  <script>
+    // Correct way to access attributes using getAttribute()
+    let text = document.getElementById("myDiv").getAttribute("data-myattribute");
+    if (text !== null) {
+      console.log(text); // Output: Hello
+    } else {
+      console.log("Attribute not found!");
+    }
+
+    //Access attribute using dataset
+    let text2 = document.getElementById("myDiv").dataset.myattribute;
+    if (text2 !== undefined) {
+      console.log(text2); // Output: Hello
+    } else {
+      console.log("Attribute not found!");
+    }
+    //Accessing a non existent attribute
+    let text3 = document.getElementById("myDiv").dataset.nonexistent;
+    if(text3 != undefined){
+      console.log(text3);
+    } else{
+      console.log("Attribute not found!");
+    }
+  </script>
+</body>
+</html>

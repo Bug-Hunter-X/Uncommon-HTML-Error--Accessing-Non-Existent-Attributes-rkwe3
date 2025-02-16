@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Incorrect way to access a non-existent attribute
+    let text = document.getElementById("myDiv").getAttribute("data-nonexistent");
+    console.log(text); // Output: null 
+    //Best Practice: check for null before using
+    if(text != null){
+      console.log(text);
+    }
+    //Another way to access the attribute
+    let text2 = document.getElementById("myDiv").dataset.nonexistent;
+    console.log(text2); //Output: undefined
+    //Best Practice: check for undefined before using
+    if(text2 != undefined){
+      console.log(text2);
+    }
+  </script>
+</body>
+</html>
